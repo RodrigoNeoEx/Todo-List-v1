@@ -1,6 +1,7 @@
 const append = document.getElementById('infoSection');
 const firstLineSection = document.createElement('section');
 const lastLineSection = document.createElement('section');
+const asideCollumSection = document.createElement('section');
 
 function createInfoText() {
   const createP = document.createElement('p');
@@ -68,3 +69,29 @@ function createBtnClear() {
   lastLineSection.appendChild(createclearAllButton);
 }
 
+function createAsideSection() {
+  asideCollumSection.className = 'asideCollumBox'
+  append.appendChild(asideCollumSection);
+}
+
+function createBtnUp() {
+  const buttonUP = document.createElement('button');
+  buttonUP.id = 'mover-cima';
+  buttonUP.classList = 'mover-cima';
+  buttonUP.innerText = '🔺' ;
+  asideCollumSection.appendChild(buttonUP);
+}
+
+function createBtnDown() {
+  const buttonDown = document.createElement('button');
+  buttonDown.id = 'mover-baixo';
+  buttonDown.classList = 'mover-baixo';
+  buttonDown.innerText = '🔻' ;
+  asideCollumSection.appendChild(buttonDown);
+}
+
+function createOl() {
+  const createOL = document.createElement('ol');
+  createOL.id = 'lista-tarefas';
+  append.appendChild(createOL);
+}

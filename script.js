@@ -112,6 +112,23 @@ function callStructure() {
   createOl();
 }
 
+function addAssignment() {
+  document.getElementById('criar-tarefa');
+  const getInput = document.getElementById('texto-tarefa').value;
+  if (getInput !== '') {
+    const addLI = document.createElement('li');
+    const getID = document.getElementById('lista-tarefas');
+    getID.appendChild(addLI);
+    addLI.innerHTML = getInput;
+    addLI.classList = 'assigmentList';
+  }
+}
+
+function listeners() {
+  document.getElementById('criar-tarefa').addEventListener('click', addAssignment);
+}
+
 window.onload = function () {
   callStructure();
+  listeners();
 };

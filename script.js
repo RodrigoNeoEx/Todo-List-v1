@@ -112,6 +112,13 @@ function callStructure() {
   createOl();
 }
 
+function cleanAssigmentInput() {
+  const inputed = document.getElementsByName('inputAssigment');
+  inputed.forEach((element) => {
+    element.value = '';
+  });
+}
+
 function addAssignment() {
   document.getElementById('criar-tarefa');
   const getInput = document.getElementById('texto-tarefa').value;
@@ -122,7 +129,9 @@ function addAssignment() {
     addLI.innerHTML = getInput;
     addLI.classList = 'assigmentList';
   }
+  cleanAssigmentInput()
 }
+
 
 function listeners() {
   document.getElementById('criar-tarefa').addEventListener('click', addAssignment);

@@ -1,5 +1,6 @@
 const append = document.getElementById('infoSection');
 const firstLineSection = document.createElement('section');
+const lastLineSection = document.createElement('section');
 
 function createInfoText() {
   const createP = document.createElement('p');
@@ -36,5 +37,34 @@ function createBtnSaveAllAssigments() {
   saveAllAssigment.innerText = 'Save Tasks';
   saveAllAssigment.classList = 'styleHeadButtons';
   firstLineSection.appendChild(saveAllAssigment);
+}
+
+function createLastSection() {
+  lastLineSection.className = 'lastLineBox';
+  append.appendChild(lastLineSection);
+}
+
+function createBtnRemove() {
+  const createRemoveButton = document.createElement('button');
+  createRemoveButton.id = 'remover-selecionado';
+  createRemoveButton.innerText = 'Remove Choosed';
+  createRemoveButton.classList = 'styleFooterButtons';
+  lastLineSection.appendChild(createRemoveButton);
+}
+
+function createBtnFinished() {
+  const removeFinishedButton = document.createElement('button');
+  removeFinishedButton.id = 'remover-finalizados';
+  removeFinishedButton.innerText = 'Remove Finished';
+  removeFinishedButton.classList = 'styleFooterButtons';
+  lastLineSection.appendChild(removeFinishedButton);
+}
+
+function createBtnClear() {
+  const createclearAllButton = document.createElement('button');
+  createclearAllButton.id = 'apaga-tudo';
+  createclearAllButton.innerText = 'Remove All';
+  createclearAllButton.classList = 'styleRmvAllButton';
+  lastLineSection.appendChild(createclearAllButton);
 }
 

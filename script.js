@@ -95,3 +95,23 @@ function createOl() {
   createOL.id = 'lista-tarefas';
   append.appendChild(createOL);
 }
+
+function callStructure() {
+  createInfoText();
+  createFirstSection();
+  createBtnTasks();
+  createInputAssigment();
+  createBtnSaveAllAssigments();
+  createLastSection();
+  createBtnRemove();
+  createBtnFinished();
+  createBtnClear();
+  createAsideSection();
+  createBtnUp();
+  createBtnDown();
+  createOl();
+}
+
+window.onload = function () {
+  callStructure();
+};

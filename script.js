@@ -194,6 +194,15 @@ function removeChoosed() {
     }
   }
 }
+function selectedElement() {
+  const liItens = document.querySelectorAll('li');
+  for (let index = 0; index < liItens.length; index += 1) {
+    if (liItens[index].classList.value.includes('backgroundList')) {
+      const element = liItens[index];
+      return element;
+    }
+  }
+}
 
 function moveUpTask() {
   const moveUP = selectedElement();
@@ -257,5 +266,4 @@ window.onload = function () {
   callStructure();
   listeners();
   recoveryLocalStorage();
-  playBG()
 };

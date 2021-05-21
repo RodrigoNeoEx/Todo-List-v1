@@ -60,7 +60,7 @@ ol {
   cursor: progress;
   max-width: 70vw;
   min-height: 50vh;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(1px);
 }
 
 .completed {
@@ -146,4 +146,8 @@ button {
 #criar-tarefa {
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+input {
+  color: black;
 }

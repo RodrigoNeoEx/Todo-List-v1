@@ -153,10 +153,55 @@ function lineThroughAssigment(event) {
   }
 }
 
+function removeCompleted() {
+  const elementAssigmentList = document.querySelectorAll('.assigmentList');
+  const tarefas = document.getElementById('lista-tarefas');
+  for (let index = 0; index < elementAssigmentList.length; index += 1) {
+    const element = elementAssigmentList[index];
+    if (element.classList.value.includes('completed')) {
+      tarefas.removeChild(element);
+      const assigmentToRemove = {
+        text: element.innerText,
+        class: element.className,
+      };
+      localStorage.removeItem(index, JSON.stringify(assigmentToRemove));
+    }
+  }
+}
+
+function removeAll() {
+  const elementAssigmentList = document.querySelectorAll('.assigmentList');
+  const tarefas = document.getElementById('lista-tarefas');
+  for (let index = 0; index < elementAssigmentList.length; index += 1) {
+    if (elementAssigmentList[index].classList.value.includes('assigmentList')) {
+      tarefas.removeChild(elementAssigmentList[index]);
+      localStorage.clear();
+    }
+  }
+}
+function removeChoosed() {
+  const elementAssigmentList = document.querySelectorAll('.assigmentList');
+  const tarefas = document.getElementById('lista-tarefas');
+  for (let index = 0; index < elementAssigmentList.length; index += 1) {
+    const element = elementAssigmentList[index];
+    if (element.classList.value.includes('backgroundList')) {
+      tarefas.removeChild(element);
+      const assigmentToRemove = {
+        text: element.innerText,
+        class: element.className,
+      };
+      localStorage.removeItem(index, JSON.stringify(assigmentToRemove));
+    }
+  }
+}
+
 function listeners() {
   document.getElementById('criar-tarefa').addEventListener('click', addAssignment);
   document.querySelector('#lista-tarefas').addEventListener('click', chooseAssigmentList);
   document.querySelector('#lista-tarefas').addEventListener('dblclick', lineThroughAssigment);
+  document.getElementById('remover-finalizados').addEventListener('click', removeCompleted);
+  document.getElementById('apaga-tudo').addEventListener('click', removeAll);
+  document.getElementById('remover-selecionado').addEventListener('click', removeChoosed);
 }
 
 window.onload = function () {

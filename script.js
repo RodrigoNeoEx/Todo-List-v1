@@ -236,8 +236,13 @@ function recoveryLocalStorage() {
   }
 }
 
+function playBG() {
+  document.getElementById('start').play();
+}
+
 function listeners() {
   document.getElementById('criar-tarefa').addEventListener('click', addAssignment);
+  document.getElementById('criar-tarefa').addEventListener('click', playBG)
   document.querySelector('#lista-tarefas').addEventListener('click', chooseAssigmentList);
   document.querySelector('#lista-tarefas').addEventListener('dblclick', lineThroughAssigment);
   document.getElementById('remover-finalizados').addEventListener('click', removeCompleted);
@@ -252,4 +257,5 @@ window.onload = function () {
   callStructure();
   listeners();
   recoveryLocalStorage();
+  playBG()
 };

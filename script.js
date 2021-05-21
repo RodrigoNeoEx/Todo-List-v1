@@ -145,9 +145,18 @@ function chooseAssigmentList(event) {
   document.querySelector('ol').classList = ''
 }
 
+function lineThroughAssigment(event) {
+  if (event.target.classList.value.includes('completed')) {
+    event.target.classList.remove('completed');
+  } else {
+    event.target.classList.add('completed');
+  }
+}
+
 function listeners() {
   document.getElementById('criar-tarefa').addEventListener('click', addAssignment);
   document.querySelector('#lista-tarefas').addEventListener('click', chooseAssigmentList);
+  document.querySelector('#lista-tarefas').addEventListener('dblclick', lineThroughAssigment);
 }
 
 window.onload = function () {

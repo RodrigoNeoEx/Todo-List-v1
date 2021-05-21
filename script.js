@@ -225,6 +225,17 @@ function buttonSaveAllTasks() {
   }
 }
 
+function recoveryLocalStorage() {
+  const inputedTasks = document.getElementById('lista-tarefas');
+  for (let index = 0; index < localStorage.length; index += 1) {
+    const recoveredTasks = document.createElement('li');
+    const objectString = JSON.parse(localStorage.getItem(index));
+    recoveredTasks.innerText = objectString.text;
+    recoveredTasks.className = objectString.class;
+    inputedTasks.appendChild(recoveredTasks);
+  }
+}
+
 function listeners() {
   document.getElementById('criar-tarefa').addEventListener('click', addAssignment);
   document.querySelector('#lista-tarefas').addEventListener('click', chooseAssigmentList);
@@ -240,4 +251,5 @@ function listeners() {
 window.onload = function () {
   callStructure();
   listeners();
+  recoveryLocalStorage();
 };

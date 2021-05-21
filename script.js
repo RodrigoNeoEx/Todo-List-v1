@@ -133,8 +133,21 @@ function addAssignment() {
 }
 
 
+function chooseAssigmentList(event) {
+  const elementAssigmentList = document.querySelectorAll('.assigmentList');
+  for (let index = 0; index < elementAssigmentList.length; index += 1) {
+    const element = elementAssigmentList[index];
+    if (element.classList.value.includes('backgroundList')) {
+      element.classList.remove('backgroundList');
+    }
+  }
+  event.target.classList.add('backgroundList');
+  document.querySelector('ol').classList = ''
+}
+
 function listeners() {
   document.getElementById('criar-tarefa').addEventListener('click', addAssignment);
+  document.querySelector('#lista-tarefas').addEventListener('click', chooseAssigmentList);
 }
 
 window.onload = function () {
